@@ -1,0 +1,82 @@
+<div class="content-body" style="width: 100%; background-color: #fff;">
+    <div id="invoice-template" class="invoice-template file-export" style="padding:0 30px; background-color: #fff;">
+      <div style="min-height: 680px;">
+        <div style="min-width: 600px">
+          <header style="border-bottom: 1px solid #4e73df;padding-bottom: 10px;padding-top: 20px;overflow: hidden;">
+            <div>
+                <div style="width: 50%;float: left;">
+                    <img class="student_logo" src="data:image/png;base64,{{logo}}" alt="logo">
+               </div>
+              </div>
+          </header>
+          <main style="padding-bottom:50px;">
+            <div style="margin: 20px 0;min-height: 100px;">
+              <div style="width: 50%;float: left;font-family: Arial, Helvetica, sans-serif;">
+                <div>INVOICE TO:</div>
+                <h2 style="margin:0;">{{user_name}}
+               </h2>
+               <div><a href="mailto:{{user_email}}">{{user_email}}</a></div>
+                <div>Phone: {{user_phone}}</div>
+              </div>
+              <div style="text-align: right;width: 50%;float: right; font-family: Arial, Helvetica, sans-serif;">
+                <h1 style="margin-top: 0;color: #8685d8;">INVOICE #{{invoice_id}}</h1>
+                <div>Date of Invoice: {{billing_date}}</div>
+               <!--  <div>Due Date: 30/10/2018</div> -->
+              </div>
+            </div>
+            <table border="0" cellspacing="0" cellpadding="0" style="width: 100%;border-collapse: collapse;border-spacing: 0;margin-bottom: 20px;font-family: Arial, Helvetica, sans-serif;">
+              <thead>
+                <tr>
+                  <th colspan="1" style="white-space: nowrap;font-weight: 400;font-size: 16px;padding: 15px; background: #4e73df; border-bottom: 1px solid #fff;color: #fff;">#</th>
+                  <th colspan="2" style="white-space: nowrap;font-weight: 400;font-size: 16px;padding: 15px; background:#4e73df; border-bottom: 1px solid #fff;color: #fff;">Item</th>
+                  <th colspan="2" style="white-space: nowrap;font-weight: 400;font-size: 16px;padding: 15px; background: #4e73df; border-bottom: 1px solid #fff;color: #fff;">Price</th>
+                  <th colspan="2" style="white-space: nowrap;font-weight: 400;font-size: 16px;padding: 15px; background: #4e73df; border-bottom: 1px solid #fff;color: #fff;">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+               
+
+                <tr>
+                  <td colspan="1" style="text-align:center;white-space: nowrap;font-size: 1.6em;background: #ddd;padding: 15px;    border-bottom: 1px solid #fff;">1</td>
+                  <td colspan="2" style="text-align:center;white-space: nowrap;background: #ddd;border-bottom: 1px solid #fff;font-size: 1em;padding: 15px;">
+                    <h3 style="margin: 0;font-weight: 400;font-size: 1.2em;">{{subscription_title}}</h3>
+                  </td>
+                  <td colspan="2" style="text-align:center;background: #ddd;border-bottom: 1px solid #fff;font-size: 1em;padding: 15px;">${{subscription_amt}}</td>
+                  <td colspan="2" style="text-align:center;background: #ddd;border-bottom: 1px solid #fff;font-size: 1em;padding: 15px;">${{subscription_amt}}</td>
+                </tr>
+               
+                  
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3" style="text-align:center;background: 0 0;white-space: nowrap;text-align: right;padding: 10px 20px;font-size: 1em;border:none;"></td>
+                  <td colspan="2" style="text-align:center;background: 0 0;border-bottom: none;white-space: nowrap;padding: 10px 20px;font-size: 1em;border-top: 1px solid #aaa;">SUBTOTAL</td>
+                  <td style="text-align:center;background: 0 0;border-bottom: none;white-space: nowrap;padding: 10px 20px;font-size: 1em;border-top: 1px solid #aaa;">${{subscription_amt}}</td>
+                </tr>
+                <tr>
+                  <td colspan="3" style="text-align:center;background: 0 0;white-space: nowrap;text-align: right;padding: 10px 20px;font-size: 1em;border:none;"></td>
+                  <td colspan="2" style="text-align:center;background: 0 0;border-bottom: none;white-space: nowrap;padding: 10px 20px;font-size: 1em;border-top: 1px solid #aaa;">
+                    DISCOUNT
+                   
+                  </td>
+                  <td style="text-align:center;background: 0 0;border-bottom: none;white-space: nowrap;padding: 10px 20px;font-size: 1em;border-top: 1px solid #aaa;">
+                    {{discount}}%
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3" style="text-align:center;background: 0 0;white-space: nowrap;text-align: right;padding: 10px 20px;font-size: 1em;border:none;"></td>
+                  <td colspan="2" style="text-align:center;background: 0 0;border-bottom: none;white-space: nowrap;padding: 10px 20px;font-size: 1em;border-top: 1px solid #aaa;">GRAND TOTAL</td>
+                  <td style="text-align:center;background: 0 0;border-bottom: none;white-space: nowrap;padding: 10px 20px;font-size: 1em;border-top: 1px solid #aaa;">${{discounted_price}}</td>
+                </tr>
+              </tfoot>
+            </table>
+     
+          </main>
+          <footer style="width: 100%;text-align: center;color: #777;border-top: 1px solid #4e73df;padding: 8px 0;font-family: Arial, Helvetica, sans-serif;">
+            Invoice was created on a computer and is valid without the signature and seal.
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div id="invoice-editor"></div>
+  </div>
